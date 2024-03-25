@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        dialog {
+            width: 600px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+            translate: -50% -50%;
+            background-color: aliceblue;
+            border-radius: 10px;
+            border: none;
+
+            .block {
+                padding-left: 40px;
+                padding-top: 40px;
+
+                .close {
+                    all: unset;
+                    background-color: aqua;
+                    padding: 5px 20px;
+                    width: 480px;
+                    height: 40px;
+                    margin-top: 30px;
+                    text-align: center;
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: fit-content;
+
+            input,
+            select,
+            textarea,
+            button {
+                padding: 10px;
+                border-radius: 12px;
+                outline: none;
+                border: 1px solid #c4c4c4;
+            }
+
+            button {
+                cursor: pointer;
+            }
+
+            .error {
+                border-color: red;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form name="login">
+        <input type="text" placeholder="name" name="name">
+        <p id="error"></p>
+        <input type="text" placeholder="age" name="age">
+        <p id="error"></p>
+        <select name="language">
+            <option value="not">Not Selected</option>
+            <option value="javaScript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="swift">Swift</option>
+            <option value="c#">C#</option>
+            <option value="c++">C++</option>
+            <option value="kotlin">Kotlin</option>
+        </select>
+        <button data-open>Add</button>
+    </form>
+
+
+
+    <dialog>
+        <div class="block">
+            <h1>Hello, <b id="name"></b></h1>
+            <p></p>
+            <button class="close" data-close>✔️</button>
+        </div>
+    </dialog>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

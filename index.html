@@ -5,43 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-
     <style>
-        * {
-            padding: 0;
-            margin: 0 auto;
-            box-sizing: border-box;
-        }
-
-        dialog {
-            width: 600px;
-            height: 500px;
-            position: absolute;
-            top: 50%;
-            left: 40%;
-            translate: -50% -50%;
-            background-color: aliceblue;
-            border-radius: 10px;
-            border: none;
-
-            .block {
-                padding-left: 40px;
-                padding-top: 40px;
-
-                .close {
-                    all: unset;
-                    background-color: aqua;
-                    padding: 5px 20px;
-                    width: 480px;
-                    height: 40px;
-                    margin-top: 30px;
-                    text-align: center;
-                    border-radius: 5px;
-                }
-            }
-        }
-
         * {
             padding: 0px;
             margin: 0px;
@@ -51,59 +15,85 @@
         form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
             width: fit-content;
 
             input,
-            select,
-            textarea,
-            button {
+            select {
                 padding: 10px;
-                border-radius: 12px;
+                border-radius: 10px;
+                border-color: #c4c4c4;
                 outline: none;
-                border: 1px solid #c4c4c4;
             }
 
             button {
+                all: unset;
+                width: 200px;
+                text-align: center;
+                border: 1px solid black;
+                border-radius: 10px;
+                padding: 10px;
                 cursor: pointer;
             }
+        }
 
-            .error {
-                border-color: red;
+        .text {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 28px;
             }
         }
-    </style>
 
+        .error {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 
 <body>
 
-    <form name="login">
-        <input type="text" placeholder="name" name="name">
-        <p id="error"></p>
-        <input type="text" placeholder="age" name="age">
-        <p id="error"></p>
-        <select name="language">
-            <option value="not">Not Selected</option>
-            <option value="javaScript">JavaScript</option>
-            <option value="python">Python</option>
-            <option value="swift">Swift</option>
-            <option value="c#">C#</option>
-            <option value="c++">C++</option>
-            <option value="kotlin">Kotlin</option>
-        </select>
-        <button data-open>Add</button>
-    </form>
+    <center>
+        <div class="text">
+            <h1>Error: <b>0</b></h1>
+            <h2>Success: <b>0</b></h2>
+        </div>
+    </center>
 
-
+    <center>
+        <form name="login">
+            <input type="text" placeholder="name" name="name">
+            <p id="first"></p>
+            <input type="text" placeholder="age" name="age">
+            <p id="second"></p>
+            <select name="language">
+                <option value="Not">Not Selected</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="Python">Python</option>
+                <option value="C++">C++</option>
+                <option value="C#">C#</option>
+                <option value="Swift">Swift</option>
+                <option value="Kotlin">Kotlin</option>
+            </select>
+            <p id="third"></p>
+            <button>Add</button>
+        </form>
+    </center>
 
     <dialog>
-        <div class="block">
-            <h1>Hello, <b id="name"></b></h1>
-            <p></p>
-            <button class="close" data-close>✔️</button>
-        </div>
+        <h1>Congratulations <b id="name"></b></h1>
+        <p></p>
     </dialog>
+
 
 
     <script src="./script.js"></script>
